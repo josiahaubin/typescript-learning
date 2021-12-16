@@ -7,24 +7,42 @@
 
 //NOTE interfaces
 //? makes it not mandatory
+// interface IUser {
+//     name: string;
+//     age?: number;
+//     getMessage(): string
+// }
+// const user: IUser = {
+//     name: "Monster",
+//     age: 30,
+//     getMessage() {
+//         return 'Hello' + name;
+//     }
+// };
+
+// const user2: IUser = {
+//     name: "Jack",
+//     getMessage() {
+//         return 'Hello' + name;
+//     }
+// };
+
+// console.log(user.name)
+
+//NOTE Union and Type
+type ID = string;
+type PopularTag = string;
+type MaybePopularTag = PopularTag | null;
+
 interface IUser {
-    name: string;
-    age?: number;
-    getMessage(): string
+    id: ID
+    name: string
+    surname: string
 }
-const user: IUser = {
-    name: "Monster",
-    age: 30,
-    getMessage() {
-        return 'Hello' + name;
-    }
-};
 
-const user2: IUser = {
-    name: "Jack",
-    getMessage() {
-        return 'Hello' + name;
-    }
-};
-
-console.log(user.name)
+const popularTags: PopularTag[] = ["dragon", "coffee"];
+const dragons: MaybePopularTag = "dragon"; //can be null as well
+let username: string = "alex";
+let pagename: string | number = "1";
+let errorMessage: string | null = null;
+let user: IUser | null = null;
